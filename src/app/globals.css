@@ -2,32 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  @apply antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.content-wrapper {
+  @apply max-w-7xl mx-auto px-5;
+}
+
+.nav-link {
+  @apply relative text-white font-bold text-base leading-normal h-[38px] flex items-center px-4 underline decoration-transparent;
+  @apply transition-all duration-300 ease-in-out;
+
+  &.active {
+    @apply decoration-secondary underline-offset-4;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1 {
+  @apply text-5xl font-black leading-[50px];
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.h2, h2 {
+  @apply text-[32px] leading-[34px] font-bold text-primary;
+  &.light {
+    @apply text-white;
   }
+}
+
+.h3, h3 {
+  @apply text-2xl leading-[25px] font-bold text-primary
+}
+
+p {
+  @apply text-lg leading-5 text-black font-normal;
+}
+
+.btn-primary {
+  @apply bg-secondary text-black font-bold text-base leading-4 px-6 py-3 rounded;
+  @apply transition-all duration-300 ease-in-out;
 }
