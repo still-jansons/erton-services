@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Arimo, Heebo} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const heebo = Heebo({subsets: ["latin"]});
 const arimo = Arimo({subsets: ["latin"]});
@@ -16,11 +17,12 @@ export default function RootLayout({children,}: Readonly<{
 }>) {
   return (
     <html lang="en">
-      
-      <body className={heebo.className}>
+      <body className={`${heebo.className} bg-primary-light`}>
         <Navbar />
       
         {children}
+      
+        <Footer />
       </body>
     </html>
   );

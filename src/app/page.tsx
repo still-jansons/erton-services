@@ -2,11 +2,14 @@ import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
 import TextAndImageBlock from "@/components/TextAndImageBlock";
 import CardListBlock from "@/components/CardListBlock";
+import VideoBlock from "@/components/VideoBlock";
+import ContactUsBlock from "@/components/ContactUsBlock";
 
 type Card = {
   title: string;
   body: string;
   icon?: string;
+  theme?: "light" | "dark";
 }
 
 export default function Page() {
@@ -42,17 +45,41 @@ export default function Page() {
       icon: "/icons/scales.svg"
     }
   ]
+  
+  const cards_2 = [
+    {
+      title: "Kundservice outsourcing",
+      body: "Låt oss ta hand om era kundinteraktioner så att ni kan fokusera på kärnverksamheten. Vår kundserviceoutsourcing erbjuder en sömlös och effektiv lösning för att hantera inkommande samtal, e-post, chatt och mer.",
+      theme: "dark"
+    },
+    {
+      title: "Callcenterlösningar",
+      body: "Med våra callcenterlösningar kan ni säkerställa att varje kundkontakt behandlas med omsorg och professionalism. Vi erbjuder både inkommande och utgående samtalstjänster för att möta era unika behov.",
+      theme: "dark"
+    },
+    {
+      title: "Expansion av verksamhet",
+      body: "Med vår expertis och erfarenhet inom kundservice och relaterade frågor kan vi stödja ditt företagsutveckling i Sverige. Vi erbjuder skräddarsydda lösningar för att navigera den svenska marknaden, från kundidentifiering till långsiktiga relationer.",
+      theme: "dark"
+    }
+  ] as Card[]
   return (
     <main>
       <HeroSection />
-      <Section color="secondary" hasPadding>
+      <Section color="secondary" backgroundType="scroll" background="/images/lines.webp" hasPadding>
         <TextAndImageBlock />
       </Section>
-      <Section color="primary" hasPadding title="Varför välja Erton Services AB?" background="/images/blocks-secondary.svg">
+      <Section color="primary" hasPadding title="Varför välja Erton Services AB?" backgroundType="float" background="/images/blocks-secondary.svg">
         <CardListBlock cards={cards} />
       </Section>
-      <Section color="secondary" hasPadding title="Youtube video" subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
-        <div></div>
+      <Section color="secondary" backgroundType="scroll" background="/images/lines.webp" hasPadding title="Youtube video" subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+        <VideoBlock />
+      </Section>
+      <Section color="primary" backgroundType="scroll" background="/images/desk.webp" hasPadding title="Tjänster">
+        <CardListBlock cards={cards_2} />
+      </Section>
+      <Section backgroundType="float" color="primary" background="/images/blocks-secondary.svg">
+        <ContactUsBlock />
       </Section>
     </main>
   )

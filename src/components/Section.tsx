@@ -11,9 +11,11 @@ export default function Section(
     hasPadding = false,
     title,
     subtitle,
+    backgroundType = "float",
     background = "/images/blocks.svg"
   }: {
     children: React.ReactNode
+    backgroundType: "float" | "scroll"
     color: "primary" | "secondary"
     hasPadding?: boolean
     title?: string
@@ -23,7 +25,7 @@ export default function Section(
 ) {
   const {scrollYProgress} = useScroll()
   const willChange = useWillChange()
-  const position = useTransform(scrollYProgress, [0, 3], ['50%', '0%'])
+  const position = useTransform(scrollYProgress, [0, 2], ['50%', '0%'])
 
   return (
     <section
@@ -31,12 +33,12 @@ export default function Section(
         `relative ${color === "primary" ? "bg-gradient-to-b from-primary-light to-primary" : "bg-white"} ${hasPadding ? "py-24" : null}`
       }
     >
-      {color === "primary" ? (
+      {backgroundType === "float" ? (
         <motion.div
-          initial={{opacity: 0, left: '-50%'}}
-          animate={{opacity: 1, left: 0}}
+          initial={{ opacity: 0, x: '-50%' }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{duration: .75, ease: "easeOut"}}
-          viewport={{once: true}}
+          viewport={{once: true, margin: '-100px'}}
           className="absolute inset-0 h-full max-h-[90%] my-auto"
         >
           <Image
@@ -47,7 +49,7 @@ export default function Section(
               objectPosition: "center",
             }}
             fill={true}
-            className=" m-auto max-w-[1500px]"
+            className=" m-auto"
             quality={100}
           />
         </motion.div>
@@ -57,7 +59,7 @@ export default function Section(
           transition={{ease: "easeOut"}}
           style={{
             willChange,
-            backgroundImage: "url('/images/lines.webp')",
+            backgroundImage: `url(${background})`,
             backgroundPositionY: position
           }}
         />
@@ -65,15 +67,13 @@ export default function Section(
       
       { (title || subtitle) && (
         <motion.div
-          initial="hidden"
-          animate={{opacity: 1, y: 0}}
-          transition={{duration: .75, ease: "easeInOut", delay: .5}}
           className={`relative max-w-5xl flex flex-col gap-4 mx-auto mb-6`}
-          whileInView="visible"
-          viewport={{once: true, amount: 0.5}}
-          variants={{
-            visible: { opacity: 1, y: 0 },
-            hidden: { opacity: 0, y: 100 }
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{duration: .75, ease: "easeInOut", delay: .5}}
+          viewport={{once: true, margin: '-50px'}}
+          style={{
+            willChange
           }}
         >
           { title && <h2 className={`text-center ${color === 'primary' ? 'light' : null}`}>{title}</h2> }

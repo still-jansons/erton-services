@@ -7,9 +7,9 @@ export default function TextAndImageBlock() {
   return (
     <div className="relative flex items-center gap-20 max-w-5xl mx-auto">
       <motion.div
-        viewport={{ once: true }}
         initial={{opacity: 0}}
-        animate={{opacity: 1}}
+        whileInView={{opacity: 1}}
+        viewport={{ once: true }}
         transition={{duration: 1, ease: "easeOut"}}
       >
         <Image
@@ -20,11 +20,11 @@ export default function TextAndImageBlock() {
         />
       </motion.div>
       <motion.div
-        viewport={{ once: true }}
-        initial={{opacity: 0, x: '100%'}}
-        animate={{opacity: 1, x: 0}}
-        transition={{duration: .75, ease: "easeInOut", delay: .75}}
         className="max-w-[700px] flex flex-col gap-4"
+        initial={{ opacity: 0 , x: '100%' }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{duration: .75, ease: "easeInOut", delay: .5}}
       >
         <h2>Högkvalitativ kundservice</h2>
         <p>Vi på Erton Services är stolta över att erbjuda skräddarsydda och högkvalitativa kundservice och callcenterlösningar för företag i hela Sverige. I dagens snabbt föränderliga affärsmiljö är  det avgörande att ha en effektiv och proaktiv kundservicestrategi för att behålla och locka  nya kunder. Genom att anlita oss som din föredragna outsourcingpartner för kundservice kan  du dra nytta av följande fördelar</p>

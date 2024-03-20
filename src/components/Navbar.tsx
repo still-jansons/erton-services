@@ -1,5 +1,6 @@
 'use client'
 
+import {motion} from 'framer-motion';
 import Image from 'next/image'
 import Link from "next/link";
 import {usePathname} from "next/navigation";
@@ -14,7 +15,12 @@ export default function Navbar() {
   ]
   
   return (
-    <header className="bg-primary h-[60px]">
+    <motion.header
+      className="bg-primary h-[60px] sticky z-50 top-0 shadow-xl"
+      initial={{y: -60}}
+      animate={{y: 0}}
+      transition={{duration: .5}}
+    >
       <nav className="h-full flex items-center content-wrapper">
         <a>
           <Image
@@ -35,6 +41,6 @@ export default function Navbar() {
           ))}
         </div>
       </nav>
-    </header>
+    </motion.header>
   )
 }
