@@ -1,34 +1,46 @@
-"use client"
+"use client";
 
-import {motion} from "framer-motion";
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-export default function TextAndImageBlock() {
+export default function TextAndImageBlock({
+  title,
+  body,
+  image,
+  imagePosition = "left",
+}: {
+  title: string;
+  body: string;
+  image?: string;
+  imagePosition?: "left" | "right";
+}) {
   return (
-    <div className="relative flex items-center gap-20 max-w-5xl mx-auto">
+    <div
+      className={`relative mx-auto flex max-w-5xl flex-col items-center gap-24 px-5 md:gap-20 ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"}`}
+    >
+      {image && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <Image src={image} alt={title} width={225} height={225} />
+        </motion.div>
+      )}
       <motion.div
-        initial={{opacity: 0}}
-        whileInView={{opacity: 1}}
-        viewport={{ once: true }}
-        transition={{duration: 1, ease: "easeOut"}}
-      >
-        <Image
-          src="/images/check-seal.svg"
-          alt="Check seal"
-          width={225}
-          height={225}
-        />
-      </motion.div>
-      <motion.div
-        className="max-w-[700px] flex flex-col gap-4"
-        initial={{ opacity: 0 , x: '100%' }}
+        className="mx-auto flex max-w-[700px] flex-col gap-4 md:max-w-[60%]"
+        initial={{
+          opacity: 0,
+          x: imagePosition === "right" ? "-100%" : "100%",
+        }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{duration: .75, ease: "easeInOut", delay: .5}}
+        transition={{ duration: 0.75, ease: "easeInOut", delay: 0.5 }}
       >
-        <h2>Högkvalitativ kundservice</h2>
-        <p>Vi på Erton Services är stolta över att erbjuda skräddarsydda och högkvalitativa kundservice och callcenterlösningar för företag i hela Sverige. I dagens snabbt föränderliga affärsmiljö är  det avgörande att ha en effektiv och proaktiv kundservicestrategi för att behålla och locka  nya kunder. Genom att anlita oss som din föredragna outsourcingpartner för kundservice kan  du dra nytta av följande fördelar</p>
+        <h2>{title}</h2>
+        <p>{body}</p>
       </motion.div>
     </div>
-  )
+  );
 }

@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import {motion} from 'framer-motion';
-import Image from 'next/image'
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const routes = [
-    {name: "Hem", path: "/"},
-    {name: "Tjänster", path: "/tjanster"},
-    {name: "Om oss", path: "/om-oss"},
-    {name: "Kontakter", path: "/kontakter"}
-  ]
-  
+    { name: "Hem", path: "/" },
+    { name: "Tjänster", path: "/tjanster" },
+    { name: "Om oss", path: "/om-oss" },
+    { name: "Kontakter", path: "/kontakter" },
+  ];
+
   return (
     <motion.header
-      className="bg-primary h-[60px] sticky z-50 top-0 shadow-xl"
-      initial={{y: -60}}
-      animate={{y: 0}}
-      transition={{duration: .5}}
+      className="sticky top-0 z-50 h-[60px] bg-primary shadow-xl"
+      initial={{ y: -60 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      <nav className="h-full flex items-center content-wrapper">
+      <nav className="content-wrapper flex h-full items-center">
         <a>
           <Image
             src="/logo.svg"
@@ -37,10 +37,12 @@ export default function Navbar() {
               key={index}
               href={route.path}
               className={`nav-link ${pathname === route.path ? "active" : ""}`}
-            >{route.name}</Link>
+            >
+              {route.name}
+            </Link>
           ))}
         </div>
       </nav>
     </motion.header>
-  )
+  );
 }
