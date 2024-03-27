@@ -6,9 +6,6 @@ const base = new Airtable({
   apiKey: process.env.AIRTABLE_API_KEY,
 }).base(process.env.AIRTABLE_BASE_ID!);
 
-console.log(process.env.AIRTABLE_API_KEY);
-console.log(process.env.AIRTABLE_BASE_ID);
-
 export async function submitContact(
   prevState: { message: string; status: string },
   formData: FormData,
@@ -34,10 +31,9 @@ export async function submitContact(
       base(process.env.AIRTABLE_TABLE_CONTACTS!)
         .select({
           view: "Grid view",
-          filterByFormula: `{fldBZuy1TpfM5v4QF} = '${data.email}'`,
+          filterByFormula: `{${columns.email}} = '${data.email}'`,
         })
         .firstPage((err, records) => {
-          console.log(err, "CHECK EMAIL ERR");
           if (err) {
             reject("Något gick fel. Vänligen försök igen senare.");
             return;
@@ -75,7 +71,6 @@ export async function submitContact(
           },
         ],
         function (err: any) {
-          console.log(err, "INSERT DATA ERR");
           if (err) {
             reject("Något gick fel. Vänligen försök igen senare.");
             return;
