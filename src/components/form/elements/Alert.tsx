@@ -16,7 +16,7 @@ export default function Alert({
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className={`${status === "success" ? "bg-logo-green" : "bg-rose-600/70"} font-heebo absolute mt-4 w-full rounded-md p-4 text-center font-bold text-white`}
+          className={`${status === "success" ? "bg-logo-green" : "bg-rose-600/70"} font-heebo z-10 mt-4 w-full rounded-md p-4 text-center font-bold text-white shadow-md md:absolute`}
           role="alert"
         >
           {message}

@@ -26,7 +26,7 @@ export default function HeroSection({
     <Section color="primary" background={{ type: "float" }} style={style}>
       <div className="content-wrapper relative flex min-h-[550px] flex-col gap-8 pt-24 md:flex-row md:gap-0 md:py-44">
         <motion.div
-          className="text-white md:max-w-[40%] lg:max-w-[40%]"
+          className="text-white md:max-w-[45%]"
           initial={{ opacity: 0, x: "-50%" }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.75, ease: "easeInOut", delay: 0.75 }}
@@ -41,7 +41,7 @@ export default function HeroSection({
           )}
         </motion.div>
         <motion.div
-          className="bottom-0 right-0 z-10 flex w-full items-end md:absolute md:h-[90%] md:max-w-[60%] lg:max-w-[60%]"
+          className="bottom-0 right-0 z-10 flex w-full items-end md:absolute md:max-w-[55%]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.75, ease: "easeIn", delay: 0.5 }}

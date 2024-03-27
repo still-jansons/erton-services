@@ -16,7 +16,7 @@ export default function TextAndImageBlock({
 }) {
   return (
     <div
-      className={`relative mx-auto flex max-w-5xl flex-col items-center gap-24 px-5 md:gap-20 ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"}`}
+      className={`relative mx-auto flex max-w-5xl flex-col-reverse items-center gap-24 px-5 md:gap-20 ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"}`}
     >
       {image && (
         <motion.div

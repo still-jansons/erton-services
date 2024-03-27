@@ -33,7 +33,7 @@ export default function Footer() {
           {routes.map((route, index) => (
             <Link
               key={index}
-              className="px-4 py-2.5 text-base font-extrabold text-white"
+              className="font-heebo px-4 py-2.5 text-base font-extrabold text-white transition-colors duration-300 ease-in-out hover:text-secondary"
               href={route.path}
             >
               {route.name}

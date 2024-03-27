@@ -82,7 +82,7 @@ export default function Page() {
         }}
         hasPadding
       >
-        <div className="flex flex-col gap-36">
+        <div className="flex flex-col gap-24 md:gap-36">
           {list.map((item, index) => (
             <ListAndImage
               key={index}

@@ -14,7 +14,7 @@ export default function ListAndImage({
 }) {
   return (
     <div
-      className={`relative mx-auto flex max-w-7xl flex-col px-5 md:gap-10 lg:gap-16 ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"}`}
+      className={`relative mx-auto flex max-w-7xl flex-col-reverse gap-24 px-5 md:gap-10 lg:gap-16 ${imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"}`}
     >
       {image && (
         <motion.div
@@ -30,7 +30,7 @@ export default function ListAndImage({
             quality={100}
             width={800}
             height={800}
-            className="h-full w-full rounded-3xl object-cover"
+            className="h-[400px] w-full rounded-3xl object-cover md:h-full"
           />
         </motion.div>
       )}
