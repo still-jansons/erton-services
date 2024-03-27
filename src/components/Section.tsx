@@ -33,7 +33,7 @@ export default function Section({
 }) {
   const { scrollYProgress } = useScroll();
   const willChange = useWillChange();
-  const position = useTransform(scrollYProgress, [0, 2], ["50%", "0%"]);
+  const position = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
 
   return (
     <section
@@ -67,7 +67,7 @@ export default function Section({
           className="absolute inset-0 z-0 -scale-x-100 bg-cover bg-center bg-no-repeat"
           transition={{ ease: "easeOut" }}
           style={{
-            willChange,
+            willChange: "background-position-y",
             backgroundImage: `url(${background.image})`,
             backgroundPositionY: position,
           }}

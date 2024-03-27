@@ -7,10 +7,10 @@ export default function VideoBlock() {
   return (
     <motion.div
       className="mx-auto w-full max-w-4xl px-5"
-      initial={{ opacity: 0, y: "50%" }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.75, ease: "easeOut", delay: 0.5 }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: 0.75 }}
       style={{
         willChange: "opacity, transform",
       }}

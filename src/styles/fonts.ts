@@ -2,7 +2,7 @@ import { Arimo, Heebo } from "next/font/google";
 
 const heebo = Heebo({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400", "700"],
   variable: "--font-heebo",
 });
 

@@ -9,13 +9,22 @@ html {
   line-height: 20px;
 }
 
+.font-arimo {
+  font-family: 'Arimo', sans-serif;
+}
+
+.font-heebo {
+  font-family: 'Heebo', sans-serif;
+}
+
 .content-wrapper {
   @apply mx-auto max-w-7xl px-5;
 }
 
 .nav-link {
-  @apply relative flex h-[38px] items-center px-4 text-base font-bold leading-normal text-white underline decoration-transparent underline-offset-4;
+  @apply relative flex h-[38px] items-center px-4 text-base font-bold leading-normal text-white underline decoration-transparent underline-offset-4 cursor-pointer;
   @apply transition-all duration-300 ease-in-out;
+  font-family: var(--font-heebo);
 
   &.active {
     @apply decoration-secondary underline-offset-[6px];
@@ -49,4 +58,11 @@ p {
 .btn-primary {
   @apply rounded bg-secondary px-6 py-3 text-base font-bold leading-4 text-black;
   @apply transition-all duration-300 ease-in-out;
+  @apply hover:shadow-xl focus:shadow-xl;
+  font-family: var(--font-heebo);
+}
+
+input, textarea {
+  @apply text-base flex-1 rounded-lg px-4 py-3 leading-[19px] text-black border border-black/50;
+  @apply transition-all ease-in-out duration-200 outline-secondary hover:shadow-xl focus:shadow-xl;
 }

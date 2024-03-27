@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
 import TextAndImageBlock from "@/components/TextAndImageBlock";
 import CardListBlock from "@/components/CardListBlock";
+import ContactUsBlock from "@/components/ContactUsBlock";
 import VideoBlock from "@/components/VideoBlock";
 
 type Card = {
@@ -69,11 +70,12 @@ export default function Page() {
         subtitle="Vi gör kundservice enkel"
         image="/images/two-support-people.webp"
         link={{
-          href: "/kontakt",
+          href: "/kontakter#form",
           text: "Kontakta oss",
         }}
         style={{ zIndex: 20 }}
       />
+
       <Section
         color="secondary"
         background={{
@@ -89,6 +91,7 @@ export default function Page() {
           image="/images/check-seal.svg"
         />
       </Section>
+
       <Section
         color="primary"
         hasPadding
@@ -101,6 +104,7 @@ export default function Page() {
       >
         <CardListBlock cards={cards} />
       </Section>
+
       <Section
         color="secondary"
         background={{
@@ -114,6 +118,7 @@ export default function Page() {
       >
         <VideoBlock />
       </Section>
+
       <Section
         color="primary"
         background={{
@@ -125,6 +130,16 @@ export default function Page() {
         style={{ zIndex: 16 }}
       >
         <CardListBlock cards={cards_2} />
+      </Section>
+
+      <Section
+        background={{
+          type: "float",
+          image: "/images/blocks-secondary.svg",
+        }}
+        color="primary"
+      >
+        <ContactUsBlock />
       </Section>
     </main>
   );

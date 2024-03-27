@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
 import TextAndImageBlock from "@/components/TextAndImageBlock";
 import ListAndImage from "@/components/ListAndImage";
+import ContactUsBlock from "@/components/ContactUsBlock";
 
 export default function Page() {
   const list = [
@@ -72,6 +73,7 @@ export default function Page() {
           image="/icons/smiley-face.svg"
         />
       </Section>
+
       <Section
         style={{ zIndex: 18 }}
         background={{
@@ -90,6 +92,16 @@ export default function Page() {
             />
           ))}
         </div>
+      </Section>
+
+      <Section
+        background={{
+          type: "float",
+          image: "/images/blocks-secondary.svg",
+        }}
+        color="primary"
+      >
+        <ContactUsBlock />
       </Section>
     </main>
   );

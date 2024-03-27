@@ -1,6 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
-import ContactUsBlock from "@/components/ContactUsBlock";
-import Section from "@/components/Section";
+import Link from "next/link";
 
 export default function Footer() {
   const routes = [
@@ -11,17 +13,14 @@ export default function Footer() {
   ];
 
   return (
-    <>
-      <Section
-        background={{
-          type: "float",
-          image: "/images/blocks-secondary.svg",
-        }}
-        color="primary"
+    <footer className="bg-gradient-to-b from-primary-dark to-black py-[50px]">
+      <motion.div
+        className="flex flex-col items-center justify-center gap-6"
+        initial={{ opacity: 0, scale: 0.75 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+        viewport={{ once: true, margin: "-100px" }}
       >
-        <ContactUsBlock />
-      </Section>
-      <footer className="flex flex-col items-center justify-center gap-6 bg-gradient-to-b from-primary-dark to-black py-[50px]">
         <Image
           src="/logo.svg"
           alt="Logo"
@@ -32,9 +31,13 @@ export default function Footer() {
 
         <div className="flex border-b border-t border-secondary">
           {routes.map((route, index) => (
-            <a className="px-4 py-2.5 text-base font-extrabold text-white">
+            <Link
+              key={index}
+              className="px-4 py-2.5 text-base font-extrabold text-white"
+              href={route.path}
+            >
               {route.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="flex flex-col items-center gap-3">
@@ -51,7 +54,7 @@ export default function Footer() {
             sven.lundqvist@erton.se
           </a>
         </div>
-      </footer>
-    </>
+      </motion.div>
+    </footer>
   );
 }

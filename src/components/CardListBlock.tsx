@@ -34,7 +34,7 @@ export default function CardListBlock({ cards = [] }: { cards: Card[] }) {
   };
 
   const willChange = useWillChange();
-  // transition={{duration: .5, ease: "easeOut", delay: (index + 2.7) * .45}}
+
   return (
     <div className="content-wrapper">
       <motion.ul

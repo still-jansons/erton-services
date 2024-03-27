@@ -22,15 +22,16 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
     >
       <nav className="content-wrapper flex h-full items-center">
-        <a>
+        <Link href="/">
           <Image
             src="/logo.svg"
             alt="Erton"
             className="h-12"
             width={125}
             height={37}
+            style={{ width: "auto", maxHeight: "36px" }}
           />
-        </a>
+        </Link>
         <div className="ml-auto flex items-center">
           {routes.map((route, index) => (
             <Link

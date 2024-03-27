@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import TextAndImageBlock from "@/components/TextAndImageBlock";
 import Section from "@/components/Section";
+import ContactUsBlock from "@/components/ContactUsBlock";
 
 export default function Page() {
   const textAndImageList = [
@@ -103,6 +104,15 @@ export default function Page() {
           />
         </Section>
       ))}
+      <Section
+        background={{
+          type: "float",
+          image: "/images/blocks-secondary.svg",
+        }}
+        color="primary"
+      >
+        <ContactUsBlock />
+      </Section>
     </main>
   );
 }

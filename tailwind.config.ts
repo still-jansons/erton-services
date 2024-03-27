@@ -14,6 +14,8 @@ const config: Config = {
         "primary-dark": "#07253F",
         secondary: "#FFB100",
         gray: "#F3F3F3",
+        "logo-blue": "#00C9E3",
+        "logo-green": "#74C348",
       },
     },
   },

@@ -25,7 +25,13 @@ export default function TextAndImageBlock({
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <Image src={image} alt={title} width={225} height={225} />
+          <Image
+            src={image}
+            alt={title}
+            width={225}
+            height={225}
+            style={{ width: "auto" }}
+          />
         </motion.div>
       )}
       <motion.div
