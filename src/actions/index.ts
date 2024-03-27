@@ -34,8 +34,10 @@ export async function submitContact(
           filterByFormula: `{${columns.email}} = '${data.email}'`,
         })
         .firstPage((err, records) => {
+          console.log(err);
           if (err) {
-            reject("Något gick fel. Vänligen försök igen senare.");
+            reject(err);
+            // reject("Något gick fel. Vänligen försök igen senare.");
             return;
           }
 
@@ -71,8 +73,10 @@ export async function submitContact(
           },
         ],
         function (err: any) {
+          console.log(err);
           if (err) {
-            reject("Något gick fel. Vänligen försök igen senare.");
+            reject(err);
+            // reject("Något gick fel. Vänligen försök igen senare.");
             return;
           }
 
@@ -86,6 +90,7 @@ export async function submitContact(
       status: "success",
     };
   } catch (error: any) {
+    console.log(error);
     return {
       message: error,
       status: "error",
