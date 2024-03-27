@@ -38,9 +38,9 @@ export default function TextAndImageBlock({
         className="mx-auto flex max-w-[700px] flex-col gap-4 md:max-w-[60%]"
         initial={{
           opacity: 0,
-          x: imagePosition === "right" ? "-100%" : "100%",
+          translateX: imagePosition === "right" ? "-70%" : "70%",
         }}
-        whileInView={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, translateX: "0%" }}
         viewport={{ once: true }}
         transition={{ duration: 0.75, ease: "easeInOut", delay: 0.5 }}
       >

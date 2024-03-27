@@ -42,8 +42,8 @@ export default function Section({
     >
       {background.type === "float" && (
         <motion.div
-          initial={{ opacity: 0, x: "-50%" }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, translateX: "-50%" }}
+          whileInView={{ opacity: 1, translateX: "0%" }}
           transition={{ duration: 0.75, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
           className="absolute inset-0 my-auto h-full"
@@ -52,7 +52,7 @@ export default function Section({
             src={background.image || "/images/blocks.svg"}
             alt="Background blocks"
             style={{
-              objectFit: "cover",
+              objectFit: "contain",
               objectPosition: "center",
             }}
             fill={true}
@@ -83,8 +83,8 @@ export default function Section({
       {(title || subtitle) && (
         <motion.div
           className={`relative mx-auto mb-6 flex max-w-5xl flex-col gap-4`}
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, translateY: "100%" }}
+          whileInView={{ opacity: 1, translateY: "0%" }}
           transition={{ duration: 0.75, ease: "easeInOut", delay: 0.5 }}
           viewport={{ once: true, margin: "-50px" }}
           style={{

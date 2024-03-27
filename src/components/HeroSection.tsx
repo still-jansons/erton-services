@@ -24,18 +24,22 @@ export default function HeroSection({
 }) {
   return (
     <Section color="primary" background={{ type: "float" }} style={style}>
-      <div className="content-wrapper relative flex min-h-[550px] flex-col gap-8 pt-24 md:flex-row md:gap-0 md:py-44">
+      <div className="content-wrapper relative flex flex-col justify-between gap-8 pt-40 md:min-h-[550px] md:flex-row md:gap-0 md:py-44">
         <motion.div
           className="text-white md:max-w-[45%]"
-          initial={{ opacity: 0, x: "-50%" }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, translateX: "-50%" }}
+          whileInView={{ opacity: 1, translateX: "0%" }}
           transition={{ duration: 0.75, ease: "easeInOut", delay: 0.75 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <h1>{title}</h1>
           <p className="h2 light mt-4">{subtitle}</p>
           {link && (
-            <Link href={link.href} type="button" className="btn-primary mt-8">
+            <Link
+              href={link.href}
+              type="button"
+              className="btn-primary mt-8 inline-block"
+            >
               {link.text}
             </Link>
           )}

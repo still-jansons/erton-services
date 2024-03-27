@@ -36,8 +36,8 @@ export default function Page() {
             <div className="flex w-full flex-col gap-6 md:flex-row">
               <motion.div
                 className="flex flex-1 items-center gap-5 border-[3px] border-logo-blue bg-white p-5"
-                initial={{ opacity: 0, y: "50%" }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, translateY: "50%" }}
+                whileInView={{ opacity: 1, translateY: "0%" }}
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
               >
@@ -55,8 +55,8 @@ export default function Page() {
               </motion.div>
               <motion.div
                 className="flex flex-1 items-center gap-5 border-[3px] border-logo-green bg-white p-5"
-                initial={{ opacity: 0, y: "50%" }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, translateY: "50%" }}
+                whileInView={{ opacity: 1, translateY: "0%" }}
                 transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
               >

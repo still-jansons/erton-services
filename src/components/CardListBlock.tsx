@@ -22,10 +22,10 @@ export default function CardListBlock({ cards = [] }: { cards: Card[] }) {
   };
 
   const listItemAnimation = {
-    hidden: { opacity: 0, y: "70%" },
+    hidden: { opacity: 0, translateY: "70%" },
     visible: {
       opacity: 1,
-      y: 0,
+      translateY: "0%",
       transition: {
         duration: 0.3,
         ease: "easeOut",

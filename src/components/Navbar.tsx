@@ -22,10 +22,10 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={`sticky top-0 z-50 h-screen overflow-x-hidden bg-primary shadow-xl transition-all duration-300 md:h-[60px] ${isOpen ? "max-h-screen" : "max-h-[60px]"}`}
-      initial={{ y: -60 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      className={`fixed left-0 top-0 z-50 h-screen max-w-[100vw] overflow-hidden bg-primary shadow-xl transition-all duration-300 md:sticky md:h-[60px] ${isOpen ? "max-h-screen" : "max-h-[60px]"}`}
+      initial={{ translateY: "-100%" }}
+      animate={{ translateY: "0%" }}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
     >
       <nav className="content-wrapper flex w-full flex-wrap gap-24 md:gap-0">
         <div className="flex h-[60px] w-full items-center md:w-auto">

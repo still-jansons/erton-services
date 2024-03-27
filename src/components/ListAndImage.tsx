@@ -38,9 +38,9 @@ export default function ListAndImage({
         className="mx-auto flex flex-col gap-4 md:max-w-[50%]"
         initial={{
           opacity: 0,
-          x: imagePosition === "right" ? "-100%" : "100%",
+          translateX: imagePosition === "right" ? "-70%" : "70%",
         }}
-        whileInView={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, translateX: "0%" }}
         viewport={{ once: true }}
         transition={{ duration: 0.75, ease: "easeInOut", delay: 0.5 }}
       >
