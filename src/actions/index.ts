@@ -6,6 +6,8 @@ const base = new Airtable({
   apiKey: process.env.AIRTABLE_API_KEY,
 }).base(process.env.AIRTABLE_BASE_ID!);
 
+console.log(process.env.AIRTABLE_API_KEY);
+
 export async function submitContact(
   prevState: { message: string; status: string },
   formData: FormData,
