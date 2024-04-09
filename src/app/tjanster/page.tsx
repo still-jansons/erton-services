@@ -2,6 +2,13 @@ import HeroSection from "@/components/HeroSection";
 import TextAndImageBlock from "@/components/TextAndImageBlock";
 import Section from "@/components/Section";
 import ContactUsBlock from "@/components/ContactUsBlock";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tjänster",
+  description:
+    "Erton Services erbjuder högkvalitativ kundservice och lösningar för kundtjänst.",
+};
 
 export default function Page() {
   const textAndImageList = [
@@ -80,7 +87,7 @@ export default function Page() {
         hasPadding
       >
         <TextAndImageBlock
-          title="Lorrrr impsoom"
+          title="Vår verksamhet"
           body="Vi kan hjälpa med kundserviceuppdrag som är mindre omfattande, till exempel ta emot  och registrera servicebokningar, tidsbokningar, felanmälningar eller intresseanmälningar  eller det som ni behöver hjälp med. Mer omfattande tjänster där vi helt eller delvis kan  arbeta som din kundservice utifrån dina behov. Vår teknikplattform gör det möjligt att  hantera ärenden i alla kanaler, såsom telefon, e-post, chatt och sociala medier, i det som  kallas omnikanal. Dessutom arbetar vi i de system som är aktuella för dig och din  verksamhet. Våra medarbetare specialutbildas för att förstå din verksamhet och uppdraget  för att hjälpa dina kunder på bästa sätt."
         />
       </Section>

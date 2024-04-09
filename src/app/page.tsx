@@ -4,12 +4,18 @@ import TextAndImageBlock from "@/components/TextAndImageBlock";
 import CardListBlock from "@/components/CardListBlock";
 import ContactUsBlock from "@/components/ContactUsBlock";
 import VideoBlock from "@/components/VideoBlock";
+import { Metadata } from "next";
 
 type Card = {
   title: string;
   body: string;
   icon?: string;
   theme?: "light" | "dark";
+};
+
+export const metadata: Metadata = {
+  title: "Erton Services ",
+  description: "Vi gör kundservice enkel.",
 };
 
 export default function Page() {
@@ -87,7 +93,7 @@ export default function Page() {
       >
         <TextAndImageBlock
           title="Högkvalitativ kundservice"
-          body="Vi på Erton Services är stolta över att erbjuda skräddarsydda och högkvalitativa kundservice och callcenterlösningar för företag i hela Sverige. I dagens snabbt föränderliga affärsmiljö är  det avgörande att ha en effektiv och proaktiv kundservicestrategi för att behålla och locka  nya kunder. Genom att anlita oss som din föredragna outsourcingpartner för kundservice kan  du dra nytta av följande fördelar"
+          body="Vi på Erton Services är stolta över att erbjuda skräddarsydda och högkvalitativa kundservice och callcenterlösningar för företag i hela Sverige. I dagens snabbt föränderliga affärsmiljö är  det avgörande att ha en effektiv och proaktiv kundservicestrategi för att behålla och locka  nya kunder. Genom att anlita oss som din föredragna outsourcingpartner för kundservice kan  du dra nytta av följande fördelar."
           image="/images/check-seal.svg"
         />
       </Section>
@@ -112,8 +118,7 @@ export default function Page() {
           image: "/images/lines.webp",
         }}
         hasPadding
-        title="Youtube video"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        title="Här finns vi:"
         style={{ zIndex: 17 }}
       >
         <VideoBlock />

@@ -3,6 +3,12 @@ import Section from "@/components/Section";
 import TextAndImageBlock from "@/components/TextAndImageBlock";
 import ListAndImage from "@/components/ListAndImage";
 import ContactUsBlock from "@/components/ContactUsBlock";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Om oss",
+  description: "Vårt mål är att säkerställa högkvalitativ service.",
+};
 
 export default function Page() {
   const list = [
